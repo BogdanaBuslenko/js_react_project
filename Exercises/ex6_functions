@@ -1,0 +1,27 @@
+// Место для первой задачи
+function sayHello(name) {
+    return `Привет, ${name}!`
+}
+
+// Место для второй задачи
+function returnNeighboringNumbers(int) {
+    return [int-1, int, int+1];
+}
+
+// Место для третьей задачи
+function getMathResult(base, mult) {
+    let result = '';
+    if (typeof mult !== 'number' || mult <= 0) {
+        return base;
+    }
+    else {
+        for (let i = 1; i <= mult; i++) {
+            if (i == 1) {
+                result += base;
+            } else {
+                result += '---' + base * i;
+            } 
+        }
+        return result
+    }
+}
