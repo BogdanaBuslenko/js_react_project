@@ -1,0 +1,22 @@
+// Место для первой задачи
+function calculateVolumeAndArea(hight) {
+    if (Number.isInteger(hight) && hight > 0) {
+        let V = hight * hight * hight;
+        let S = 6 * hight * hight;
+        return `Объем куба: ${V}, площадь всей поверхности: ${S}`;
+    } else {
+        return `При вычислении произошла ошибка`;
+    }
+}
+
+// Место для второй задачи
+function getCoupeNumber(sit) {
+    if (Number.isInteger(sit) && sit >= 1 && sit <= 36 ) {
+        let coupe = Math.ceil(sit/4);
+        return coupe;
+    } else if (Number.isInteger(sit) && (sit == 0 || sit > 36) ) {
+        return "Таких мест в вагоне не существует";
+    } else {
+        return "Ошибка. Проверьте правильность введенного номера места";
+    }  
+}
