@@ -1,0 +1,22 @@
+function fib(num) {
+    if (Number.isInteger(num) && num > 0) {
+        let result = '';
+        let first = 0;
+        let second = 1;
+        for (let i = 0; i < num; i++) {
+            if (i == num - 1) {
+                result += `${first}`;
+            } else {
+                result += `${first} `;
+            }
+            let third = first + second;
+            first = second;
+            second = third;
+        }  
+        console.log(result);
+        return result;      
+    } else {
+        console.log("");
+        return ""; 
+    }
+}
