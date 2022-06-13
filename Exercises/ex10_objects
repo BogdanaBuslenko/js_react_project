@@ -1,0 +1,42 @@
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    },
+    showAgeAndLangs: function(plan) {
+        const {age} = plan;
+        const {languages} = plan.skills;
+        let res = `Мне ${age} и я владею языками: `
+        languages.forEach(function(lang) {
+            res += `${lang.toUpperCase()} `
+        }) 
+        console.log(res);
+        return res;
+    }
+};
+
+function showExperience(plan) {
+    const {exp} = plan.skills;
+    console.log(exp);
+    return exp;
+
+}
+
+function showProgrammingLangs(plan) {
+    let res = '';
+    //let num = Object.keys(plan.skills.programmingLangs).length;
+    const {programmingLangs} = plan.skills;
+    for (let key in programmingLangs) {
+        res += `Язык ${key} изучен на ${programmingLangs[key]}\n`
+    }
+    console.log(res);
+    return res;
+}
+
+personalPlanPeter.showAgeAndLangs(personalPlanPeter);
