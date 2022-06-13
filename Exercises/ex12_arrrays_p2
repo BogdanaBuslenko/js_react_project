@@ -1,0 +1,35 @@
+const someString = 'This is some strange string';
+
+function reverse(str) {
+    if (typeof str !== 'string') {
+        console.log("Ошибка!");
+        return "Ошибка!";
+    } else {
+        const arr = str.split('');
+        arr.reverse();
+        const newStr = arr.join('');
+        console.log(newStr);
+        return newStr;
+    }
+}
+
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+function availableCurr(arr, missingCurr) {
+    if (arr.length === 0) {
+        console.log('Нет доступных валют');
+        return 'Нет доступных валют'
+    } else {
+        let res = `Доступные валюты:\n`;
+        arr.forEach(function(item) {
+            if (item != missingCurr) {
+                res += `${item}\n`
+            }
+        })
+        console.log(res);
+        return res;
+    }
+}
+
+availableCurr(baseCurrencies.concat(additionalCurrencies), 'CNY');
