@@ -1,0 +1,27 @@
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+
+function sortStudentsByGroups(arr) {
+    let newArr = [...arr];
+    let sortArr = newArr.sort();
+    sortArr.sort();
+    let res = [];
+    for (let i = 0; i < 3; i++) {
+        let group = [];
+        for (let j = 0; j < 3; j++) {
+            group.push(sortArr.shift());
+        }
+        res.push(group);
+    }
+    let rest = `Оставшиеся студенты: `
+    if (sortArr.length === 0) {
+        rest += `-`
+    } else {
+        rest += sortArr.join(', ');
+    }
+    res.push(rest);
+    console.log(res);
+    return res;
+}
+
+
+sortStudentsByGroups(students);
